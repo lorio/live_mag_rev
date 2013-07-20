@@ -1,0 +1,161 @@
+
+@import "Partials/typography";
+@import "Partials/normalize";
+@import "Partials/base";
+//@import "Partials/navigation";
+
+* {
+	margin: 0;
+	padding: 0;
+	@include box-sizing(border-box);
+}
+html, body, #wrapper {height: 100%}
+body {
+	background-color: $neutral-color;
+	color : $main-color;
+	height: 100%;
+	#wrapper {
+		width: 100%;
+		height: auto;
+		min-height : 100%;
+		// height : auto !important;
+		// height: 100%;
+		background-color: $neutral-color;
+		color: $main-color;	
+		.container {
+			//@include background-grid;
+			margin: 0 auto ;	
+			background-color: $whitish;
+			//@include background(linear-gradient(top, #dee4e6, #8ec5d9));
+			//background-image: url(../images/satinweave.png);
+			color: $main-color;
+			max-width: 800px;		
+			min-height: 100%;
+			height: 100%;
+			height: auto !important;
+			header {
+				width : 100%;
+				height : 60px;
+				//padding-top: 4em;
+				background-color: $accent-color;
+				color: $main-color;
+				@include letterpress(0.8);
+				}
+			nav {
+				ul {
+					//padding-top: .5em;
+					text-align: center;
+					li {
+						font-family: $heading-font-family;
+						font-weight: 600;
+						padding: 0 2em;
+						display: inline;
+						a {
+							color: $accent-color;
+							text-decoration: none;
+							&:hover {
+							border-bottom: 3px dotted $accent-color;
+							}
+						}
+					}	
+				}
+			}
+			.issue {
+				display: inline-block;
+				text-align: center;
+				padding-bottom: $footer-height;
+				#date {
+					text-align: center;
+					font-weight: bold;
+					font-size: 1.5em;
+					}
+				img {@include box-emboss(0.8, 0.05);}
+				#toc {
+					position: relative;
+					@include grid-span(6, 2);
+					@include box-emboss(0.8, 0.05); 
+					ul {
+						position: relative;
+						font-family: $heading-font-family;
+						font-size: 1.3em;
+						float: none;
+						margin: 20px 0;
+						li {
+						display: inline;
+						padding: .6em;
+						line-height: 1.3em;
+						white-space: nowrap;
+						font-weight: 600;
+						a {
+							color: $main-color;
+							text-decoration: none;
+							&:hover {
+							color: $accent-color;
+							border-bottom: 3px dotted $accent-color;
+							}
+						}
+					}
+				}
+			}
+		}	
+			#footer {
+				//@include grid-span(5, 1);
+				width: 800px;
+				position: relative;
+  			margin-top: -4em auto;
+  			height: $footer-height;
+				clear: both;
+				background-color: $whitish;
+				color: $main-color;
+				h5 {
+					text-align : center;
+				}
+			}
+		}
+	}
+}
+.menu, .no9, .poem, .byline, .title {margin: 0 150px 20px 150px}
+h1, h2.title {
+	 font-family: $heading-font-family;
+	 padding-top: 0;
+	 color: $main-color;
+	 }
+p {font-size: 90%}
+.prose {margin: 0 100px 20px 100px}
+.byline {
+	border-top: 2px #330 dotted;
+	text-align: right;
+	margin-bottom: 8px;	
+	p {margin: 0;
+	   color: #330;
+	   font-family: $heading-font-family;
+	   font-weight:600;
+	   font-size: 16px;
+	   margin-top: 2px;
+	 }
+}
+#logo h1 {
+	@include grid-span(3, 1);
+	line-height: .6em;
+	margin-left: 1em;
+}
+.tagline {
+	@include grid-span(4, 4);
+	font-weight: bold; 
+	font-family: $sans;
+	h3 {padding-top: .1em;}
+}
+.btn {
+	@include grid-span(1, 8);
+	@include box-emboss(0.8, 0.05);
+	@include letterpress(0.9);
+	@include border-radius;
+	background-color: #8ec5d9;
+	text-align: center;
+	margin: 1.3em 1.3em 0 0;
+}
+// .gradient {
+// 	@include background(linear-gradient(#8ec5d9 0%, #51b1c4 35%, #4689cf 100%));
+// }
+.space {color : white}
+//.gradient { @include background(radial-gradient(center, ellipse cover,#0e0e0e,#d8dde0)); }
